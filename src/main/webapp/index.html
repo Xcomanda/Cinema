@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cinema</title>
+</head>
+<body>
+	<h1>Cinema trainee project</h1>
+	<ul>
+		<li>Посмотреть расписание<br> <b>http://host:port/Cinema/webapi/schedule</b><br>
+			Метод GET
+		</li>
+		<li>Посмотреть бронь по id<br> <b>http://host:port/Cinema/webapi/order/{id}</b><br>
+			id - уникальный номер брони<br> Метод Метод GET
+
+		</li>
+		<li>Создать бронь<br> <b>http://host:port/Cinema/webapi/order?{movieId}=[number]&amp;{tickets}=[number]&amp;{date}=[date]</b><br>
+			movieId - уникальный номер фильма<br> tickets - нужное
+			количество билетов<br> date - дата (формат ввода задается в
+			файле свойств)<br> Бронь не будет создана если указан
+			несществующий id или дата показа<br>Метод POST
+		</li>
+		<li>Удалить бронь по id<br> <b>http://host:port/Cinema/webapi/order/{id}</b><br>
+			id - уникальный номер брони<br> Метод DELETE
+		</li>
+	</ul>
+	<br>
+	<h3>Файл свойств properties.properties</h3>
+	<ul>
+		<li><b>storage_path</b> - где хранятся файлы расписания и заказов</li>
+		<li><b>storage_date_format</b> - формат даты для хранения</li>
+		<li><b>query_date_format</b> - формат даты для запросов</li>
+		<li><b>schedule_file_name</b> - имя файла расписания</li>
+		<li><b>orders_file_name</b> - имя файла заказов</li>
+	</ul>
+</body>
+</html>
